@@ -11,18 +11,13 @@ public class InternetStoreManager {
 
     public void addSongs(List<AbstractSong> songs) {
 
-       this.songs.addAll(songs);
+        this.songs.addAll(songs);
 
     }
-    public void addSong(AbstractSong song) {
-
-        this.songs.add(song);
-
-    }
-
 
 
     public List<AbstractSong> findSongByGenreOnCD(int durationInMin) {
+
         List<AbstractSong> result = new LinkedList<>();
         for (AbstractSong song : songs) {
             if (song.getDurationInMin() > durationInMin) {
