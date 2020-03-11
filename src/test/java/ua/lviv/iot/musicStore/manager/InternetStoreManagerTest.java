@@ -26,9 +26,9 @@ class InternetStoreManagerTest extends BaseInternetStoreManagerTest {
     @Test
     public void testFindSongByGenreOnCD() {
         List<AbstractSong> songOnCD = internetStoreManager.findSongByGenreOnCD(10);
-        Assertions.assertEquals(1, songOnCD.size());
-
-         Assertions.assertEquals(13, songOnCD.get(0).getDurationInMin());
+        Assertions.assertEquals(2, songOnCD.size());
+        Assertions.assertEquals(13, songOnCD.get(0).getDurationInMin());
+        Assertions.assertEquals(11, songOnCD.get(1).getDurationInMin());
 
 
     }

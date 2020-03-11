@@ -4,4 +4,5 @@ public class Folk extends AbstractSong {
     public Folk(int durationInMin) {
         super(durationInMin);
     }
+
 }
