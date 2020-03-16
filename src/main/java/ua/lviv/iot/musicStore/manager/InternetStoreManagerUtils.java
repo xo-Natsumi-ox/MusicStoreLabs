@@ -20,7 +20,7 @@ public class InternetStoreManagerUtils {
         }
     }
 
-     private class PopularSorterByGenre implements Comparator<AbstractSong> {
+    private class PopularSorterByGenre implements Comparator<AbstractSong> {
         @Override
         public int compare(AbstractSong firstSong, AbstractSong secondSong) {
             return firstSong.compareTo(secondSong);
@@ -63,8 +63,10 @@ public class InternetStoreManagerUtils {
     public static void sortByYear(List<AbstractSong> songs, SortType sortType) {
         if (sortType == SortType.ASCENDING) {
             songs.sort((firstSong, secondSong) -> Integer.compare(firstSong.getYear(), secondSong.getYear()));
-        } else songs.sort((secondSong, firstSong) -> Integer.compare(secondSong.getYear(), firstSong.getYear()));
+        } else {
+            songs.sort((secondSong, firstSong) -> Integer.compare(secondSong.getYear(), firstSong.getYear()));
 
+        }
     }
 }
 

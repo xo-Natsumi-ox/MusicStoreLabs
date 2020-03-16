@@ -2,7 +2,7 @@ package ua.lviv.iot.musicStore.model;
 
 import static java.lang.Integer.compare;
 
-public abstract class AbstractSong implements Comparable<AbstractSong>{
+public abstract class AbstractSong implements Comparable<AbstractSong> {
     private int durationInMin;
     private Genre genre;
     private int year;
@@ -35,6 +35,15 @@ public abstract class AbstractSong implements Comparable<AbstractSong>{
     public int getYear() {
         return year;
     }
+
+    public String getHeaders() {
+        return "durationInMin, genre, year";
+    }
+
+    public String toCSV() {
+        return getDurationInMin() + ", " + getGenre() + ", " + getYear();
+    }
+
 
     @Override
     public int compareTo(AbstractSong another) {
