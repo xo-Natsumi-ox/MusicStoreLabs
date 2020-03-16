@@ -33,7 +33,6 @@ public abstract class BaseInternetStoreManagerTest {
         folk.add(new Folk(3));
         folk.add(new Folk(2));
         folk.add(new Folk(7));
-        art.add(new Art(12));
 
     }
 }

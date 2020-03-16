@@ -6,5 +6,11 @@ public class Popular extends AbstractSong {
 
     }
 
+    public String getHeaders() {
+        return super.getHeaders() + "," + "genre";
+    }
 
+    public String toCSV() {
+        return super.toCSV() + ", " + getGenre();
+    }
 }

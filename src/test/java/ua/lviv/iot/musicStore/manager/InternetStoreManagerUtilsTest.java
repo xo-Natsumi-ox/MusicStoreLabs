@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import ua.lviv.iot.musicStore.model.Genre;
 import ua.lviv.iot.musicStore.model.SortType;
 
- class InternetStoreManagerUtilsTest extends BaseInternetStoreManagerTest {
+class InternetStoreManagerUtilsTest extends BaseInternetStoreManagerTest {
 
 
     @Test
