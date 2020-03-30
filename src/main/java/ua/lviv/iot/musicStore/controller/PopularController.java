@@ -12,6 +12,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 
+import static org.springframework.http.HttpStatus.NOT_FOUND;
+import static org.springframework.http.HttpStatus.OK;
+
 @RequestMapping("/popular")
 @RestController
 public class PopularController {
@@ -38,14 +41,18 @@ public class PopularController {
 
     @DeleteMapping(path = "/{id}")
     public ResponseEntity<Popular> deletePopular(@PathVariable("id") Integer popularId) {
-        HttpStatus status = populars.remove(popularId) == null ? HttpStatus.NOT_FOUND : HttpStatus.OK;
+        HttpStatus status = populars.remove(popularId) == null ? NOT_FOUND : HttpStatus.OK;
         return ResponseEntity.status(status).build();
     }
 
     @PutMapping(path = "/{id}")
-    public Popular updatePopular(final @PathVariable("id") Integer popularId, final @RequestBody Popular popular) {
+    public ResponseEntity<Popular> updatePopular(final @PathVariable("id") Integer popularId, final @RequestBody Popular popular) {
         popular.setId(popularId);
-        return populars.put(popularId, popular);
+        if (populars.containsKey(popularId)) {
+            return ResponseEntity.ok(populars.put(popularId, popular));
+        } else {
+            return ResponseEntity.status(NOT_FOUND).build();
+        }
     }
 
 }
