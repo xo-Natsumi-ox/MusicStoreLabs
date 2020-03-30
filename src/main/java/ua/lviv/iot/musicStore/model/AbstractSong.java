@@ -6,8 +6,12 @@ public abstract class AbstractSong implements Comparable<AbstractSong> {
     private int durationInMin;
     private Genre genre;
     private int year;
+    private int id;
 
 
+    public AbstractSong(){
+
+    }
     public AbstractSong(int durationInMin) {
         this.durationInMin = durationInMin;
     }
@@ -22,7 +26,19 @@ public abstract class AbstractSong implements Comparable<AbstractSong> {
         this.year = year;
 
     }
+    public AbstractSong(int durationInMin, Genre genre, int year, int id) {
+        this(durationInMin, genre, year);
+        this.id = id;
 
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public int getDurationInMin() {
         return durationInMin;
