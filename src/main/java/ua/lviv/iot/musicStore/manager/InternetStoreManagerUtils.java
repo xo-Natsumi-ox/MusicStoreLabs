@@ -41,7 +41,7 @@ public class InternetStoreManagerUtils {
     public static void sortByDurationInMinAndGenre(List<AbstractSong> songs, SortType sortType) {
 
 
-        Comparator<AbstractSong> comparator = new Comparator<>() {
+        Comparator<AbstractSong> comparator = new Comparator<AbstractSong>() {
 
             @Override
             public int compare(AbstractSong firstSong, AbstractSong secondSong) {
@@ -69,4 +69,3 @@ public class InternetStoreManagerUtils {
         }
     }
 }
-
